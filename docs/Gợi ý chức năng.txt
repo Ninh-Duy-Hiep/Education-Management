@@ -1,0 +1,21 @@
+1.Quản lý giáo viên 
+1.1 Quản lý danh mục bằng cấp
+1.2 Quản lý khoa 
+1.3 Quản lý giáo viên 
+1.4 Thông kê giáo viên 
+2.Quản lý lớp học
+2.1 Quản lý học phần
+2.2 Quản lý kì học (có thể tách kì học và năm học hoặc gộp chung)
+2.3 Quản lý TKB/ lớp học (Danh sách các lớp mở trong kì)
+2.4 Thống kê số lớp mở cho các học phần trong năm học
+3.Tính tiền dạy 
+3.1 Thiết lập định mức tiền theo tiết (số tiền cho một tiết chuẩn)
+3.2 Thiết lập các hệ số giáo viên ( sẽ tự ánh xạ hệ số theo bằng cấp , ví dụ nếu là thạc sĩ thì hệ số sẽ là xx )
+3.3 Thiết lập hệ số lớp
+3.4 Phân công giảng viên (dạy các lớp)
+3.5 Tính tiền dạy cho một giáo viên trong một kì 
+4. Báo cáo 
+4.1 Báo cáo tiền dạy của giáo viên trong một năm
+4.1 Báo cáo tiền dạy của giáo viên một khoa
+4.1 Báo cáo tiền dạy của giáo viên toàn trường
+.......
