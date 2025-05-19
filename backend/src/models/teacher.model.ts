@@ -1,5 +1,5 @@
 import { DataTypes, Model, Optional } from 'sequelize';
-import sequelize from '../../config/database';
+import sequelize from '../config/database';
 
 interface TeacherAttributes {
   id: number;
@@ -13,6 +13,9 @@ interface TeacherCreationAttributes extends Optional<TeacherAttributes, 'id'> {}
 
 export class Teacher extends Model<TeacherAttributes, TeacherCreationAttributes>
   implements TeacherAttributes {
+  Faculties(Faculties: any) {
+    throw new Error('Method not implemented.');
+  }
   public id!: number;
   public full_name!: string;
   public degree_id?: number;

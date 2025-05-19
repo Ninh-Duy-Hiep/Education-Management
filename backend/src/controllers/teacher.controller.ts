@@ -1,14 +1,13 @@
 import { Request, Response } from 'express';
 import { Op } from 'sequelize';
-import { Teacher } from '../models/teacher/teacher.model';
-import { TeacherFaculty } from '../models/teacher/teacher_faculty.model';
+import { Teacher } from '../models/teacher.model';
+import { TeacherFaculty } from '../models/teacher_faculty.model';
 import { Degree } from '../models/degree.model';
 
 export const getAllTeachers = async (req: Request, res: Response) => {
   const { degree_id, faculty_id, name } = req.query;
 
   try {
-    // Base where clause
     const whereClause: any = {};
     if (degree_id) whereClause.degree_id = degree_id;
     if (name) whereClause.full_name = { [Op.like]: `%${name}%` };

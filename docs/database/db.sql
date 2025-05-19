@@ -1,8 +1,9 @@
 -- 1. Bằng cấp (Degree)
 CREATE TABLE Degree (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(50) UNIQUE NOT NULL, -- Ví dụ: 'Cử nhân', 'Thạc sĩ', 'Tiến sĩ'
-    coefficient FLOAT NOT NULL         -- Hệ số tương ứng: 0.8, 1.0, 1.2
+    name VARCHAR(50) NOT NULL,
+    coefficient FLOAT NOT NULL,
+    UNIQUE (name)
 );
 
 -- 2. Giáo viên (Teacher)
@@ -11,25 +12,27 @@ CREATE TABLE Teacher (
     full_name VARCHAR(100) NOT NULL,
     degree_id INT REFERENCES Degree(id) ON DELETE SET NULL,
     email VARCHAR(100),
-    phone VARCHAR(20) 
+    phone VARCHAR(20)
 );
 
 -- 3. Tài khoản người dùng (Account)
 CREATE TABLE Account (
     id SERIAL PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
+    username VARCHAR(50) NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
     role VARCHAR(20) NOT NULL CHECK (role IN ('AdminTruong', 'AdminKhoa', 'GiaoVien')),
-    teacher_id INT REFERENCES Teacher(id) ON DELETE CASCADE
+    teacher_id INT REFERENCES Teacher(id) ON DELETE CASCADE,
+    UNIQUE (username)
 );
 
 -- 4. Khoa (Faculty)
 CREATE TABLE Faculty (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
     description TEXT,
     contact_phone VARCHAR(20),
-    head_of_faculty INT REFERENCES Teacher(id)
+    head_of_faculty INT REFERENCES Teacher(id) ON DELETE SET NULL,
+    UNIQUE (name)
 );
 
 -- 5. Gán giáo viên vào khoa (nhiều-một)
@@ -105,9 +108,7 @@ CREATE TABLE ReportExport (
     generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- 13. Chỉ mục (Indexes)
-CREATE INDEX idx_teacher_faculty ON Teacher_Faculty(faculty_id);
+-- Chỉ giữ lại các indexes quan trọng nhất
 CREATE INDEX idx_course_semester ON Course(semester_id);
-CREATE INDEX idx_assignment_teacher ON TeachingAssignment(teacher_id);
 CREATE INDEX idx_salary_teacher ON SalaryCalculation(teacher_id);
 CREATE INDEX idx_salary_semester ON SalaryCalculation(semester_id);
