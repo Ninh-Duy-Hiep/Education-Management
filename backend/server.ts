@@ -10,6 +10,7 @@ sequelize.sync({ alter: false }).then(() => {
   setupAssociations();
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    console.log(`API documentation is available at http://localhost:${PORT}/api-docs`);
   });
 })
 .catch((error) => {

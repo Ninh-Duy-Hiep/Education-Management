@@ -1,15 +1,6 @@
 <template>
-  <div id="app">
-    <router-view></router-view>  <!-- Nơi hiển thị các trang đăng nhập và đăng ký -->
-  </div>
+  <router-view />
 </template>
 
-<script lang="ts">
-export default {
-  name: 'App',
-};
+<script lang="ts" setup>
 </script>
-
-<style>
-/* Style tùy chỉnh của bạn */
-</style>

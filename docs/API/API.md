@@ -1,63 +1,192 @@
-## API bằng cấp
-**1. Tạo mới bằng cấp** 
-`POST http://localhost:3000/api/degrees`
+# 📚 API Tài liệu hệ thống quản lý giảng dạy
+
+---
+
+## 🏅 API Bằng cấp (Degree)
+
+**1. Tạo mới bằng cấp**
+`POST /api/degrees`
+
 **2. Lấy danh sách bằng cấp đã tạo**
-`GET http://localhost:3000/api/degrees`
+`GET /api/degrees`
 
-## API Giáo viên
+---
+
+## 👨‍🏫 API Giáo viên (Teacher)
+
 **1. Lấy toàn bộ danh sách giáo viên**
-`GET http://localhost:3000/api/teachers`
-**2. Lấy danh sách giáo viên theo lọc filter**
-`GET http://localhost:3000/api/teachers?degree_id=?&faculty_id=?&name=?`
-**3. Lấy thông tin chi tiết của 1 giáo viên**
-`GET http://localhost:3000/api/teachers/:id`
-**4. Thêm một giáo viên mới**
-`POST http://localhost:3000/api/teachers`
-**5. Cập nhật thông tin giáo viên**
-`PUT http://localhost:3000/api/teachers/:id`
-**6. Xoá một giáo viên**
-`DELETE http://localhost:3000/api/teachers/:id`
+`GET /api/teachers`
 
-## API Tài khoản
+**2. Lọc giáo viên theo bằng cấp, khoa, tên**
+`GET /api/teachers?degree_id=?&faculty_id=?&name=?`
+
+**3. Lấy thông tin chi tiết giáo viên**
+`GET /api/teachers/:id`
+
+**4. Thêm giáo viên mới**
+`POST /api/teachers`
+
+**5. Cập nhật giáo viên**
+`PUT /api/teachers/:id`
+
+**6. Xoá giáo viên**
+`DELETE /api/teachers/:id`
+
+---
+
+## 🔐 API Tài khoản (Account)
+
 **1. Đăng nhập**
-`POST http://localhost:3000/api/accounts/login`
+`POST /api/accounts/login`
+
 **2. Đăng ký**
-`POST http://localhost:3000/api/accounts/register`
+`POST /api/accounts/register`
 
-## API Khoa
+---
+
+## 🏫 API Khoa (Faculty)
+
 **1. Lấy tất cả khoa**
-`GET http://localhost:3000/api/faculties`
-**2. Lấy thông tin chi tiết của khoa**
-`GET http://localhost:3000/api/faculties/:id`
+`GET /api/faculties`
+
+**2. Lấy chi tiết khoa**
+`GET /api/faculties/:id`
+
 **3. Tạo khoa mới**
-`POST http://localhost:3000/api/faculties`
-**4. Cập nhật thông tin khoa**
-`PUT http://localhost:3000/api/faculties/:id`
-**5. Xóa khoa**
-`DELETE http://localhost:3000/api/faculties/:id`
+`POST /api/faculties`
 
-## API gán giáo viên vào khoa 
+**4. Cập nhật khoa**
+`PUT /api/faculties/:id`
+
+**5. Xoá khoa**
+`DELETE /api/faculties/:id`
+
+---
+
+## 🤝 API Gán giáo viên vào khoa (Teacher-Faculty)
+
 **1. Gán giáo viên vào khoa**
-`POST http://localhost:3000/api/teacher-faculty`
-**2. Lấy các khoa mà giáo viên thuộc**
-`GET http://localhost:3000/api/teacher-faculty/teachers/:teacherID` 
-**3. Lấy các giáo viên của một khoa**
-`GET http://localhost:3000/api/teacher-faculty/faculties/:facultyID` 
+`POST /api/teacher-faculty`
+
+**2. Lấy khoa mà giáo viên thuộc**
+`GET /api/teacher-faculty/teachers/:teacherID`
+
+**3. Lấy giáo viên thuộc khoa**
+`GET /api/teacher-faculty/faculties/:facultyID`
+
 **4. Huỷ gán giáo viên khỏi khoa**
-`DELETE http://localhost:3000/api/teacher-faculty`
+`DELETE /api/teacher-faculty`
 
-## API năm học
+---
+
+## 📅 API Năm học (Academic Year)
+
 **1. Lấy tất cả năm học**
-`GET http://localhost:3000/api/academic-years`
-**2. Lấy năm học theo id**
-`GET http://localhost:3000/api/academic-years/:id`
-**3. Thêm năm học mới**
-`POST http://localhost:3000/api/academic-years`
-**4. Cập nhật năm học**
-`PUT http://localhost:3000/api/academic-years/:id`
-**5. Xóa năm học**
-`DELETE http://localhost:3000/api/academic-years/:id`
+`GET /api/academic-years`
 
-## API kỳ học
-**1. Tạo mới kỳ học**
-`POST http://localhost:3000/api/semesters`
+**2. Lấy năm học theo ID**
+`GET /api/academic-years/:id`
+
+**3. Thêm năm học mới**
+`POST /api/academic-years`
+
+**4. Cập nhật năm học**
+`PUT /api/academic-years/:id`
+
+**5. Xoá năm học**
+`DELETE /api/academic-years/:id`
+
+---
+
+## 📆 API Kỳ học (Semester)
+
+**1. Tạo kỳ học mới**
+`POST /api/semesters`
+
+**2. Lấy danh sách kỳ học**
+`GET /api/semesters`
+
+**3. Lấy kỳ học theo ID**
+`GET /api/semesters/:id`
+
+**4. Cập nhật kỳ học**
+`PUT /api/semesters/:id`
+
+**5. Xoá kỳ học**
+`DELETE /api/semesters/:id`
+
+---
+
+## 🧾 API Lớp học phần (Course)
+
+**1. Tạo lớp học phần**
+`POST /api/courses`
+
+**2. Lấy danh sách lớp học phần**
+`GET /api/courses`
+
+**3. Lấy lớp học phần theo ID**
+`GET /api/courses/:id`
+
+**4. Cập nhật lớp học phần**
+`PUT /api/courses/:id`
+
+**5. Xoá lớp học phần**
+`DELETE /api/courses/:id`
+
+---
+
+## 🧑‍🏫 API Phân công giảng dạy (Teaching Assignment)
+
+**1. Tạo phân công**
+`POST /api/assignments`
+
+**2. Lấy danh sách phân công**
+`GET /api/assignments`
+
+**3. Lấy phân công theo ID**
+`GET /api/assignments/:id`
+
+**4. Cập nhật phân công**
+`PUT /api/assignments/:id`
+
+**5. Xoá phân công**
+`DELETE /api/assignments/:id`
+
+---
+
+## 📐 API Hệ số giảng dạy (Coefficient)
+
+**1. Tạo hệ số**
+`POST /api/coefficients`
+
+**2. Lấy danh sách hệ số**
+`GET /api/coefficients`
+
+**3. Lấy hệ số theo ID**
+`GET /api/coefficients/:id`
+
+**4. Cập nhật hệ số**
+`PUT /api/coefficients/:id`
+
+**5. Xoá hệ số**
+`DELETE /api/coefficients/:id`
+
+---
+
+## 💰 API Tính lương giảng dạy (Salary Calculation)
+
+**1. Tính lương mới**
+`POST /api/salaries/calculate`
+
+**2. Lấy danh sách bảng lương**
+`GET /api/salaries`
+
+**3. Lấy bảng lương theo ID**
+`GET /api/salaries/:id`
+
+**4. Xoá bảng lương**
+`DELETE /api/salaries/:id`
+
+
+
