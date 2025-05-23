@@ -2,8 +2,9 @@
 CREATE TABLE Degree (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
+    symbol_name VARCHAR(20) NOT NULL,
     coefficient FLOAT NOT NULL,
-    UNIQUE (name)
+    UNIQUE (name,symbol_name)
 );
 
 -- 2. Giáo viên (Teacher)

@@ -1,24 +1,25 @@
 <template>
-  <div class="layout">
+  <div class="d-flex default-layout">
     <Sidebar />
     <main class="content">
       <slot />
     </main>
+
   </div>
 </template>
+
 
 <script lang="ts" setup>
 import Sidebar from '@/components/common/Sidebar.vue';
 </script>
 
 <style scoped>
-.layout {
-  display: flex;
-  min-height: 100vh;
+.default-layout {
+  background: var(--color-background);
 }
 .content {
   flex-grow: 1;
   padding: 20px;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 </style>

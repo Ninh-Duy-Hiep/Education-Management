@@ -36,6 +36,20 @@
   --section-gap: 160px;
 }
 
+:root {
+  --color-background: linear-gradient(#EFEFEF, #4A99A3);
+
+  --icon-sidebar : #2B59CE;
+  --color-sidebar : #FFFAFA;
+  --hover-sidebar : linear-gradient( #ADBBDE, #B6BCCA);
+
+  --color-input : #FFFAFA;
+
+  --color-submit : #2B59CE;
+  --color-update : rgba(109, 136, 206);
+  --color-delete : #e32020;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -58,7 +72,7 @@
   font-weight: normal;
 }
 
-body {
+/* body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
@@ -83,4 +97,4 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */

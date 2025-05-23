@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 
-import { setupFontAwesome } from './plugins/icon'  
+import { setupFontAwesome } from './plugins/icon'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 

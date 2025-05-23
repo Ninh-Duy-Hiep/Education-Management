@@ -1,25 +1,32 @@
 @import './base.css';
 
-body {
-  display: flex;
-  place-items: center;
-}
-
 #app {
-  /* max-width: 1280px; */
   width: 100%;
-  margin: 0 auto;
-  font-weight: normal;
 }
 
 input {
   width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: var(--color-input);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+button {
+  font-family: "Poppins",sans-serif;
+  font-weight: normal;
+}
+
+.btn-update,
+.btn-delete {
+  border-radius: 10px;
+  width: 80px;
+  color: white;
+}
+
+.btn-delete { background-color: var(--color-delete);}
+.btn-update { background-color: var(--color-update);}
+
+.error-message {
+  color: red;
 }
 
 

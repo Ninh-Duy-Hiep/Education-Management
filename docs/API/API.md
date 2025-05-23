@@ -10,6 +10,11 @@
 **2. Lấy danh sách bằng cấp đã tạo**
 `GET /api/degrees`
 
+**3. Cập nhật bằng cấp**
+`PUT /api/degrees/:id`
+
+**4. Xóa bằng cấp**
+`DELETE /api/degrees/:id`
 ---
 
 ## 👨‍🏫 API Giáo viên (Teacher)

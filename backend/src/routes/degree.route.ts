@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllDegrees, createDegree } from '../controllers/degree.controller';
+import { getAllDegrees, createDegree , updateDegree, deleteDegree } from '../controllers/degree.controller';
 
 const router = express.Router();
 
@@ -56,7 +56,9 @@ const router = express.Router();
  *         description: Lỗi dữ liệu đầu vào
  */
 
-router.get('/', getAllDegrees);
-router.post('/', createDegree);
+router.get('/', getAllDegrees as express.RequestHandler);
+router.post('/', createDegree as express.RequestHandler);
+router.put('/:id', updateDegree as express.RequestHandler);
+router.delete('/:id', deleteDegree as express.RequestHandler);
 
 export default router;

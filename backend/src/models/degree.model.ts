@@ -4,6 +4,7 @@ import sequelize from '../config/database';
 interface DegreeAttributes {
   id: number;
   name: string;
+  symbol_name: string;
   coefficient: number;
 }
 
@@ -13,6 +14,7 @@ export class Degree extends Model<DegreeAttributes, DegreeCreationAttributes>
   implements DegreeAttributes {
   public id!: number;
   public name!: string;
+  public symbol_name!: string;
   public coefficient!: number;
 }
 
@@ -25,6 +27,11 @@ Degree.init(
     },
     name: {
       type: DataTypes.STRING(50),
+      allowNull: false,
+      unique: true,
+    },
+    symbol_name: {
+      type: DataTypes.STRING(20),
       allowNull: false,
       unique: true,
     },
